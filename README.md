@@ -1,4 +1,4 @@
-# Basic CMS (Content Management Software) App
+# Basic CMS (Content Management System) App
 
 ## Overview
 
@@ -9,6 +9,7 @@ This project is a fully developed backend application powered by the Express fra
 - **User Registration**: Users can create an account.
 - **Blog Management**: Users can add, view, and modify their blogs.
 - **Logout Feature**: Users can log out from the system.
+  -\*\*
 
 ## Technology Stack
 
@@ -62,7 +63,3 @@ Contributions are welcome! Please follow these steps to contribute:
 3. Make your changes and commit them (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
