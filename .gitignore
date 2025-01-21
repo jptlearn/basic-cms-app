@@ -3,3 +3,4 @@ node_modules/
 Todos/
 .gitattributes
 .vscode/*
+public/
