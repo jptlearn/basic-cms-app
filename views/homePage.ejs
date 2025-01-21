@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Homepage</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar Styling */
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    /* Hero Section Styling */
+    .hero {
+      background: linear-gradient(45deg, #5a67d8, #4c51bf);
+      color: #fff;
+      text-align: center;
+      padding: 100px 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Image Section */
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button Styling */
+    .btn {
+      background-color: #f56b2a;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-size: 18px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e55b24;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="#">MyApp</a>
+    </div>
+    <div class="nav-links">
+      <a href="/auth/user/login" class="btn">Login</a>
+      <a href="/auth/user/register" class="btn">Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to MyApp</h1>
+    <p>Your gateway to seamless user experience.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MyApp. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
