@@ -1,8 +1,11 @@
 const express = require("express");
 const path = require("path");
+const cookieParser = require("cookie-parser");
+const authMiddleware = require("./middlewares/authMiddleware.js");
 const userRoutes = require("./routes/userRoutes.js");
 const app = express();
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
@@ -19,8 +22,19 @@ initializeDatabase().then(() => {
 
 app.get("/", (req, res) => {
   console.log("home page router accessed")
-  // console.log(userRoutes);
   res.render("homePage")
+})
+
+app.get("/welcomePage", authMiddleware, (req, res) => {
+  res.render("welcome");
+})
+
+app.get("/logout", (req, res) => {
+  // res.clearCookie('token');
+  res.clearCookie("auth", {
+    path: '/',
+  });
+  res.render("homePage");
 })
 
 app.use("/auth/user", userRoutes);
