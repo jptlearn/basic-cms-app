@@ -55,7 +55,6 @@ const loginUser = async (req, res) => {
         expiresIn: process.env.JWT_EXPIRES_IN,
       })
       res.cookie("auth", token);
-
       res.redirect("/welcomePage")
     } else {
       res.json({ message: "Invalid login data." })
@@ -65,6 +64,27 @@ const loginUser = async (req, res) => {
   }
 }
 
+const logout = (req, res) => {
+  // Destroy the session stored by Passport (OAuth session)
+  req.logout((err) => {
+    if (err) return next(err);
+
+    // Clear the JWT cookie
+    res.clearCookie("auth", {
+      path: '/'
+    });
+
+    // Clear the session cookie
+    req.session = null;
+    res.clearCookie("connect.sid", {
+      path: '/'
+    }); // Default session cookie name (express-session)
+
+    // Redirect to home page after logout
+    res.render("homePage");
+  });
+};
 
 
-module.exports = { getRegistrationPage, getLoginPage, registerUser, loginUser };
+
+module.exports = { getRegistrationPage, getLoginPage, registerUser, loginUser, logout };
