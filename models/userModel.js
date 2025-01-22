@@ -8,7 +8,7 @@ const User = (sequelize) => {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: false,
         validate: {
           len: [3, 50],
         },
