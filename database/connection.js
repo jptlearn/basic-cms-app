@@ -13,7 +13,7 @@ async function connectToDatabase() {
 
 async function syncModels() {
   try {
-    await sequelize.sync({ force: true, alter: true });
+    await sequelize.sync({ force: false, alter: true });
     console.log('Database models synchronized successfully.');
   } catch (error) {
     console.error('Error synchronizing database models:', error.message);
