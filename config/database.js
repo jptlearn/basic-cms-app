@@ -8,7 +8,7 @@ const config = {
     password: process.env.DB_PASSWORD || "",
     database: process.env.DB_NAME || "your_database_name",
     host: process.env.DB_HOST || "127.0.0.1",
-    dialect: "mysql", // or your preferred database
+    dialect: "mysql",
     logging: console.log,
   },
   test: {
