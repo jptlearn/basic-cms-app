@@ -86,6 +86,16 @@
 
   <div class="form-container">
     <h2>Login</h2>
+    <div class="form-group">
+      <label for="register">
+        <em>
+          <p
+            style="text-align: center; font-size: small; color: rgb(12, 12, 15); margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">
+            or don't have account?</p>
+        </em>
+      </label>
+      <a href="/auth/user/register"><button>Create Account</button></a>
+    </div>
     <form action="/auth/user/loggedin" method="post">
       <div class="form-group">
         <label for="email">Email</label>
@@ -101,15 +111,8 @@
         <button type="submit">Login</button>
       </div>
     </form>
-    <div class="form-group registerbtn">
-      <label for="register">
-        <em>
-          <p
-            style="text-align: center; font-size: small; color: rgb(12, 12, 15); margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">
-            or don't have account?</p>
-        </em>
-      </label>
-      <a href="/auth/user/register"><button>Create Account</button></a>
+    <div class="form-group">
+      <a href="/auth/google"><button>Login with Google</button></a>
     </div>
   </div>
 </body>
