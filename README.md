@@ -1,40 +1,37 @@
-# Basic CMS (Content Management System) App
+# Express Passport Authentication App
 
-## Overview
-
-This project is a fully developed backend application powered by the Express framework, running within the Node.js runtime environment. It provides a basic Content Management System (CMS) that allows users to register, add blogs, view blogs, and modify their own blogs.
+A web application built with Node.js, Express, and Passport.js for user authentication. This application demonstrates how to set up user authentication using session management and integrates Google OAuth for authentication.
 
 ## Features
 
-- **User Registration**: Users can create an account.
-- **Blog Management**: Users can add, view, and modify their blogs.
-- **Logout Feature**: Users can log out from the system.
-  -\*\*
+- User registration and login
+- Google OAuth authentication
+- Session management
+- Middleware for route protection
+- EJS view engine for rendering dynamic HTML pages
 
-## Technology Stack
+## Technologies Used
 
-- **Backend Framework**: Express
-- **Database**: MySQL
-- **ORM**: Sequelize (Object Relational Mapping)
-
-## Benefits of ORM
-
-Object Relational Mapping allows us to connect to the database in an object-oriented style, making querying very easy. Instead of writing raw SQL queries, we can use models as objects and utilize their methods to perform queries.
+- **Node.js**: JavaScript runtime for building server-side applications.
+- **Express**: Web framework for Node.js to build web applications.
+- **Passport.js**: Middleware for authentication in Node.js applications.
+- **EJS**: Templating engine for rendering HTML views.
+- **dotenv**: Module to load environment variables from a `.env` file.
+- **Express-session**: Middleware for managing sessions in Express applications.
+- **Cookie-parser**: Middleware for parsing cookies in HTTP requests.
 
 ## Installation
-
-To get started with this project, follow these steps:
 
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/yourusername/express-passport-authentication-app.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd <project-directory>
+   cd express-passport-authentication-app
    ```
 
 3. Install the dependencies:
@@ -43,23 +40,40 @@ To get started with this project, follow these steps:
    npm install
    ```
 
-4. Set up your database configuration in the `.env` file.
+4. Create a `.env` file in the root directory and add your environment variables:
 
-5. Run the application:
+   ```plaintext
+   PORT=3000
+   SESSION_SECRET=your_session_secret
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   ```
+
+5. Start the application:
+
    ```bash
    npm start
    ```
 
+6. Open your browser and navigate to `http://localhost:3000`.
+
 ## Usage
 
-After starting the application, you can access the API endpoints to register users and manage blogs.
+- Visit the home page to see the welcome message.
+- Use the `/auth/user` route for user authentication.
+- Use the `/auth/google` route to authenticate with Google.
+
+## Middleware
+
+- **authMiddleware**: Protects routes by ensuring the user is authenticated before accessing certain pages.
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps to contribute:
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
+## Acknowledgments
+
+- [Express](https://expressjs.com/)
+- [Passport.js](http://www.passportjs.org/)
+- [EJS](https://ejs.co/)
+- [Node.js](https://nodejs.org/)
