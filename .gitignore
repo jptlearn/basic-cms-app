@@ -4,3 +4,4 @@ Todos/
 .gitattributes
 .vscode/*
 public/
+.DS_Store
