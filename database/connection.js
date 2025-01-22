@@ -1,6 +1,5 @@
 const { Sequelize } = require("sequelize");
-const { User } = require("../models/index.js")
-const sequelize = require("../database/dbConfig.js");
+const { sequelize } = require("../models/index.js");
 
 async function connectToDatabase() {
   try {
@@ -14,7 +13,7 @@ async function connectToDatabase() {
 
 async function syncModels() {
   try {
-    await sequelize.sync({ force: false, alter: true });
+    await sequelize.sync({ force: true, alter: true });
     console.log('Database models synchronized successfully.');
   } catch (error) {
     console.error('Error synchronizing database models:', error.message);
