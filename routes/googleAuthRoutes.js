@@ -10,7 +10,6 @@ const {
 
 router.route("/").get(googleAuthRedirect);
 
-router.route("/callback")
-  .get(passport.authenticate("google", { failureRedirect: "/auth/user/register" }), googleAuthCallback);
+router.route("/callback").get(googleAuthCallback);
 
 module.exports = router;
