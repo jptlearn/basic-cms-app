@@ -7,36 +7,26 @@ const googleAuthRedirect = passport.authenticate("google", {
 });
 
 // Handles the Google OAuth callback
-// const googleAuthCallback = (req, res, next) => {
-//   passport.authenticate("google", { failureRedirect: "/auth/user/login" }, (err, user, info) => {
-//     if (err) {
-//       return next(err);
-//     }
-
-//     if (!user) {
-//       return res.redirect("/auth/user/login");
-//     }
-
-//     // Successful authentication
-//     req.logIn(user, (err) => {
-//       if (err) {
-//         return next(err);
-//       }
-
-//       // Redirect to the welcome page or any other page
-//       res.redirect("/welcomePage");
-//     });
-//   })(req, res, next);
-// };
-
 const googleAuthCallback = (req, res, next) => {
   passport.authenticate("google", { failureRedirect: "/auth/user/login" }, (err, user, info) => {
+    if (err) {
+      return next(err);
+    }
+
+    if (!user) {
+      return res.redirect("/auth/user/login");
+    }
+
+    // Successful authentication
     req.logIn(user, (err) => {
       if (err) {
         return next(err);
       }
+      console.log("User from callback: ", user);
+      console.log("info from callback: ", info);
+      // Redirect to the welcome page or any other page
       res.redirect("/welcomePage");
-    })
+    });
   })(req, res, next);
 };
 
