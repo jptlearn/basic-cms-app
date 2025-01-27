@@ -16,10 +16,8 @@ function configurePassport() {
         try {
           // Log the profile for debugging purposes
           console.log("Google Profile:", profile);
-
           // Check if a user with the given Google ID exists
           let user = await User.findOne({ where: { googleId: profile.id } });
-
           // If user doesn't exist, create a new one
           if (!user) {
             user = await User.create({
@@ -29,7 +27,6 @@ function configurePassport() {
               password: null,
             });
           }
-
           // Authentication successful
           return done(null, user);
         } catch (error) {
