@@ -12,11 +12,9 @@ const googleAuthCallback = (req, res, next) => {
     if (err) {
       return next(err);
     }
-
     if (!user) {
       return res.redirect("/auth/user/login");
     }
-
     // Successful authentication
     req.logIn(user, (err) => {
       if (err) {
