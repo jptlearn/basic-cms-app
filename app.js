@@ -11,16 +11,14 @@ const userRoutes = require("./routes/userRoutes.js");
 const googleAuthRoutes = require("./routes/googleAuthRoutes.js");
 const { sessionConfig } = require("./config/sessionConfig.js");
 const authmiddleware = require("./middlewares/authMiddleware.js");
+const helmet = require('helmet');
 
 const app = express();
 
-// Middleware setup
+app.use(helmet());
 app.use(session(sessionConfig));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Passport configuration
 configurePassport();
