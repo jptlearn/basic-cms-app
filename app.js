@@ -9,18 +9,19 @@ const configurePassport = require("./config/passportConfig.js");
 const initializeDatabase = require("./database/connection.js");
 const userRoutes = require("./routes/userRoutes.js");
 const googleAuthRoutes = require("./routes/googleAuthRoutes.js");
-const { sessionConfig } = require("./config/sessionConfig.js");
+const sessionConfig = require("./config/sessionConfig.js");
 const authmiddleware = require("./middlewares/authMiddleware.js");
-const helmet = require('helmet');
 
 const app = express();
 
-app.use(helmet());
+// Middleware setup
 app.use(session(sessionConfig));
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Passport configuration
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));// Passport configuration
 configurePassport();
 
 // View engine setup
