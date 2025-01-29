@@ -24,10 +24,10 @@ A robust authentication system built with Express.js and Passport, featuring bot
 
 1. Clone the repository:
 
-```bash
-git clone <repository-url>
-cd express-passport-authenticator-app
-```
+   ```bash
+   git clone <repository-url>
+   cd express-passport-authenticator-app
+   ```
 
 2. Navigate to the project directory:
 
