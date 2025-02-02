@@ -44,9 +44,9 @@ A robust authentication system built with Express.js and Passport, featuring bot
 4. Create a `.env` file in the root directory and add your environment variables:
 
    ```plaintext
-   PORT=3000
+   PORT=your_port_number
    DB_NAME=your_database_name
-   DB_HOST=localhost
+   DB_HOST=your_database_host
    DB_USERNAME=your_username
    DB_PASSWORD=your_password
    JWT_SECRET=your_jwt_secret
